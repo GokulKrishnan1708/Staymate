@@ -1,0 +1,3 @@
+import React from "react";
+import { Plus, Megaphone } from 'lucide-react';
+export default function NoticesPage({notices,onAdd}) { return <><div className="page-intro"><div><h1>Notices</h1><p>Publish and maintain hostel announcements.</p></div><button className="primary-button" onClick={onAdd}><Plus size={17}/> Post notice</button></div><div className="notice-grid">{notices.map(n=><article className="panel notice-card" key={n.id}><div className="notice-icon"><Megaphone size={19}/></div><div className="notice-copy"><h3>{n.title}</h3><p>{n.body}</p><small>Posted {n.posted} · {n.author}</small></div></article>)}</div></>; }
